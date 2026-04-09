@@ -39,6 +39,9 @@
           <button id="toggle-view" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-2xl font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] active:scale-95 text-sm">
             Voir ma collection (0)
           </button>
+          <button id="toggle-deck" class="hidden bg-purple-600 hover:bg-purple-500 text-white px-6 py-2.5 rounded-2xl font-bold transition-all shadow-[0_0_15px_rgba(147,51,234,0.2)] active:scale-95 text-sm">
+            Deck Builder
+          </button>
           <button id="open-reset-modal" class="bg-gray-800 hover:bg-red-900/40 text-gray-400 hover:text-red-400 px-5 py-2.5 rounded-2xl transition-all border border-gray-700 active:scale-95 text-sm">
             Réinitialiser
           </button>
@@ -105,8 +108,43 @@
 <main id="main-content" class="relative z-10 w-full flex-grow">
   <div id="cards-container" class="container mx-auto p-4 md:p-8 pt-6 md:pt-10">
     <div id="mainPage" class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
+    
+    <main id="main-content" class="relative z-10 w-full flex-grow">
+  <div id="cards-container" class="container mx-auto p-4 md:p-8 pt-6 md:pt-10">
+    <div id="mainPage" class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
+    
     <div id="collectionPage" class="hidden">
       <div id="collectionGrid" class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
+    </div>
+
+    <div id="deckPage" class="hidden flex flex-col lg:flex-row gap-8 items-start">
+      <div class="lg:w-1/2 w-full bg-gray-900/40 border border-white/5 rounded-3xl p-6 shadow-inner">
+        <h2 class="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          Ma Collection
+        </h2>
+        <div id="deckSourceList" class="grid grid-cols-4 gap-4 max-h-[65vh] overflow-y-auto pr-2 custom-scrollbar"></div>
+      </div>
+
+      <div class="lg:w-1/2 w-full bg-gray-900/40 border border-white/5 rounded-3xl p-6 shadow-inner flex flex-col">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-xl font-bold text-purple-400 flex items-center gap-2">
+            <span class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+            Deck (Drag & Drop)
+          </h2>
+          <button id="clear-deck" class="px-4 py-2 text-[10px] font-black text-gray-400 hover:text-white hover:bg-red-500/20 rounded-xl border border-white/5 transition-all uppercase tracking-widest">
+            Vider le deck
+          </button>
+        </div>
+        <div id="deck-grid" class="grid grid-cols-3 sm:grid-cols-3 gap-4 flex-grow content-start">
+          <div class="deck-slot aspect-[3/4] border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-gray-800 font-bold text-xl transition-all" data-slot="0">1</div>
+          <div class="deck-slot aspect-[3/4] border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-gray-800 font-bold text-xl transition-all" data-slot="1">2</div>
+          <div class="deck-slot aspect-[3/4] border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-gray-800 font-bold text-xl transition-all" data-slot="2">3</div>
+          <div class="deck-slot aspect-[3/4] border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-gray-800 font-bold text-xl transition-all" data-slot="3">4</div>
+          <div class="deck-slot aspect-[3/4] border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-gray-800 font-bold text-xl transition-all" data-slot="4">5</div>
+          <div class="deck-slot aspect-[3/4] border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-gray-800 font-bold text-xl transition-all" data-slot="5">6</div>
+        </div>
+      </div>
     </div>
   </div>
 </main>
